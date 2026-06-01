@@ -18,7 +18,7 @@ apt update && apt upgrade -y
 
 # Required pkgs for metasploit
 echo "[*] Installing dependencies ..."
-apt install -y binutilsi \
+apt install -y binutils \
     python \
     autoconf \
     bison \
