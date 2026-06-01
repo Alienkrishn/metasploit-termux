@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/msf_img.jpg" alt="Metasploit Termux Logo" width="500">
+<img src="https://www.metasploit.com/includes/images/metasploit-logo-light-external-use.svg" alt="Metasploit Termux Logo" width="500">
 
 # 🦠 Metasploit Termux
 
@@ -12,6 +12,14 @@
 
 <br>
 
+<details>
+<summary><b>📸 Click to view screenshot</b></summary>
+<br>
+<img src="assets/msf_img.jpg" alt="Metasploit Termux Screenshot" width="700">
+</details>
+
+<br>
+
 </div>
 
 ---
@@ -20,7 +28,7 @@
 
 A simple and reliable script to install the **Metasploit Framework 6.4.135** directly on your Android device via Termux. 
 
-Unlike other buggy scripts, this installer includes **actual patches**—such as fixing the common `nokogiri gumbo parser error`—to ensure Metasploit runs smoothly in the Termux environment. As a bonus, it also automatically installs **apktool** for your Android payload crafting needs.
+Unlike other buggy scripts, this installer includes **actual patches**—such as fixing the notorious `nokogiri gumbo parser error`—to ensure Metasploit runs smoothly in the Termux environment. As a bonus, it also automatically installs **apktool** for your Android payload crafting needs.
 
 > [!WARNING]
 > **Disclaimer:** Metasploit is a powerful penetration testing tool. This script was built for educational purposes and authorized security testing only. The author is **not responsible** for any misuse, illegal activities, or damage caused by this tool. Always obtain explicit permission before testing any systems or networks.
