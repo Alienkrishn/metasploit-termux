@@ -2,7 +2,7 @@
 
 <img src="https://www.metasploit.com/includes/images/metasploit-logo-light-external-use.svg" alt="Metasploit Termux Logo" width="500">
 
-# 🦠 Metasploit Termux
+---
 
 **Metasploit Framework 6.4.135 for Termux — Simple, patched, and working.**
 
