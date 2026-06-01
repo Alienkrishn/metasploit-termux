@@ -12,14 +12,52 @@ APKTOOL_DIR="$PREFIX/share/apktool"
 LAUNCHER="$PREFIX/bin/apktool"
 JAR_URL="https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_3.0.2.jar"
 
-# updating repository
+# updating repositoryI
+echo "[*] Updating Packages repositories ..."
 apt update && apt upgrade -y
 
 # Required pkgs for metasploit
-apt install -y binutils python autoconf bison clang coreutils curl findutils apr apr-util postgresql openssl readline libffi libgmp libpcap libsqlite libgrpc libtool libxml2 libxslt ncurses make ncurses-utils git wget unzip zip tar termux-tools termux-elf-cleaner pkg-config ruby apksigner gumbo-parser gumbo-parser-static
+echo "[*] Installing dependencies ..."
+apt install -y binutilsi \
+    python \
+    autoconf \
+    bison \
+    clang \
+    coreutils \
+    curl \
+    findutils \
+    apr \
+    apr-util \
+    postgresql \
+    openssl \
+    readline \
+    libffi \
+    libgmp \
+    libpcap \
+    libsqlite \
+    libgrpc \
+    libtool \
+    libxml2 \
+    libxslt \
+    ncurses \
+    make \
+    ncurses-utils \
+    git \
+    wget \
+    unzip \
+    zip \
+    tar \
+    termux-tools \
+    termux-elf-cleaner \
+    pkg-config \
+    ruby \
+    apksigner \
+    gumbo-parser \
+    gumbo-parser-static
 
-# Apktool is also required lets install it manualy since its not available in termux
+# Apktool is also required let's install it manualy since it's not available in termux
 #
+[ -d "$APKTOOL_DIR" ] && rm -rf "$APKTOOL_DIR"
 
 echo "[*] Setting up APKTool ..."
 mkdir -p "$APKTOOL_DIR" && cd "$APKTOOL_DIR" || exit 1
@@ -40,16 +78,16 @@ exec java -jar "$PREFIX/share/apktool/apktool.jar" "$@"
 EOF
 chmod +x "$LAUNCHER"
 
-# aptool is installed now lets install nokgiri gem its requrired fot metsploit we also need to fix gumbo parser
+# aptool is installed now let's install nokgiri gem it's requrired fot metsploit we also need to fix gumbo parser
 #
 # create include dir if not exists and download header file
 #
-
+echo "[*] Downloading Nokogiri Gumbo Header ..."
 mkdir -p $PREFIX/include
 curl -L https://github.com/Alienkrishn/metasploit-termux/raw/main/assets/nokogiri_gumbo.h -o $PREFIX/include/nokogiri_gumbo.h
 
 # with this nokogiri installation is fixed simple now lets install it with sys libs
-
+echo "[*] Installing Nokogiri gem ..."
 gem install nokogiri -v 1.19.0 -- --use-system-libraries
 
 # check if its installed
@@ -60,8 +98,8 @@ ruby -rnokogiri -e "puts Nokogiri::VERSION" || {
 }
 
 
-# now we can move furthur sory my english bad
-
+# now we can move furthur sorry my english is bad
+echo "[*] Metasploit Installation started ..."
 [ -d "$MSFPATH" ] && rm -rf "$MSFPATH"
 
 wget -q "$ZIP_URL" -O "$TMPDIR/msf.zip"
