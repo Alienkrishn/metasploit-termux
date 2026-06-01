@@ -84,7 +84,7 @@ chmod +x "$LAUNCHER"
 #
 echo "[*] Downloading Nokogiri Gumbo Header ..."
 mkdir -p $PREFIX/include
-curl -L https://github.com/Alienkrishn/metasploit-termux/raw/main/assets/nokogiri_gumbo.h -o $PREFIX/include/nokogiri_gumbo.h
+curl -L https://github.com/sparklemotion/nokogiri/raw/main/gumbo-parser/src/nokogiri_gumbo.h -o $PREFIX/include/nokogiri_gumbo.h
 
 # with this nokogiri installation is fixed simple now lets install it with sys libs
 echo "[*] Installing Nokogiri gem ..."
